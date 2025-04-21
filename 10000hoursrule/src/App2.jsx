@@ -3,11 +3,10 @@ import { Box, Container, Modal, Typography } from "@mui/material";
 import InputForm from './components/InputForm';
 import ResultBox from './components/ResultBox';
 import MotivationalModal from './components/MotivationalModal';
-import Footer from "./components/Footer";
-
+import Footer from './components/Footer';
 import ClockImage from './assets/clock.png';
 import TitleImage from './assets/title.png';
-import './App.css'
+import './App.css';
 
 function App() {
   const [ field, setField ] = useState('');
@@ -22,7 +21,7 @@ function App() {
       alert('입력되지 않았습니다.');
       return;
     }
-    if(!time || timeValue > 24 || timeValue <= 0) {
+    if(!time || timeValue > 24) {
       alert('잘못된 값입니다. 24이하의 값을 입력해주세요.');
       return;
     }
@@ -80,13 +79,13 @@ function App() {
           onShare={copyUrl}
         />
 
-        <MotivationalModal open={modalOpen} handleClose={() => setModalOpen(false)}/>
+        <MotivationalModal open={modalOpen} handleClose={() => setModalOpen(false)} />
 
-        <Footer />
+        <Footer />  
 
       </Container>
     </Box>
   )
 }
 
-export default App;
+export default App
